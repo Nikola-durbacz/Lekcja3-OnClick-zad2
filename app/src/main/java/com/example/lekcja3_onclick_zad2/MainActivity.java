@@ -24,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
                 counter--;
                 updateCounter();
             } else {
-                Toast.makeText(this,
+                Toast.makeText(
+                        MainActivity.this,
                         "Licznik nie może być mniejszy od zera",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         } else if (id == R.id.buttonReset) {
             counter = 0;
@@ -41,9 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
         textCounter = findViewById(R.id.textCounter);
 
+        if (savedInstanceState != null) {
+            counter = savedInstanceState.getInt("counter", 0);
+        }
+
+        updateCounter();
+
         findViewById(R.id.buttonPlus).setOnClickListener(counterListener);
         findViewById(R.id.buttonMinus).setOnClickListener(counterListener);
         findViewById(R.id.buttonReset).setOnClickListener(counterListener);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("counter", counter);
+        super.onSaveInstanceState(outState);
     }
 
     private void updateCounter() {
