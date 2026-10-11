@@ -1,6 +1,6 @@
-Wspólny View.OnClickListener — zdefiniowany w polu counterListener w klasie MainActivity. Rozpoznaje kliknięty przycisk za pomocą v.getId() i wykonuje odpowiednią operację.
+Wspólny View.OnClickListener  zdefiniowany w polu counterListener w klasie MainActivity. Rozpoznaje kliknięty przycisk za pomocą v.getId() i wykonuje odpowiednią operację.
 
-Podpięcie listenera przez setOnClickListener() — w metodzie onCreate() ten sam obiekt counterListener jest przypisany do przycisków buttonPlus, buttonMinus i buttonReset.
+Podpięcie listenera przez setOnClickListener() w metodzie onCreate() ten sam obiekt counterListener jest przypisany do przycisków buttonPlus, buttonMinus i buttonReset.
 
 Przykładowe miejsca w kodzie:
 
